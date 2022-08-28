@@ -1,0 +1,30 @@
+<table class="table-striped table-dark">
+    <thead>
+    <tr >
+        <th>District</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Facilities</th>
+        <th>Ancillary facilities</th>
+        <th>Opening hours</th>
+        <th>Phone</th>
+        <th>Remarks</th>
+        <th>Delete</th>
+        <th>Edit Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let index of serverDataArr |  keyvalue ">
+        <td>{{ index.value.District_en }}</td>
+        <td>{{ index.value.Name_en }}</td>
+        <td>{{ index.value.Address_en }}</td>
+        <td>{{ index.value.Facilities_en }}</td>
+        <td>{{ index.value.Ancillary_facilities_en }}</td>
+        <td>{{ index.value.Opening_hours_en }}</td>
+        <td>{{ index.value.Phone }}</td>
+        <td>{{ index.value.Remarks_en }}</td>
+        <td><button class="btn btn-danger mr-sm-2" (click)="deleteButtonHandler(index.value.Name_en)">Delete</button></td>
+        <td><button class="btn btn-primary mr-sm-2" (click)="editButtonHandler(index.value.Name_en)">Edit</button></td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,12 @@
+.full{
+    height:100%;
+}
+.bar{
+    height:60px;
+}
+.content{
+    height:800px;
+    overflow-y: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+}

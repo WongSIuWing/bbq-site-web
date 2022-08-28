@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <!-- Drop down list button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary mr-sm-2" aria-pressed="false" autocomplete="off" (click)="uploadButtonHandler()">
+          Upload
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-outline-dark mr-sm-2" aria-pressed="false" autocomplete="off" (click)="searchAllButtonHandler()">
+          All Site
+        </button>
+      </li>
+      <li class="nav-item">
+        <form class="form-inline" [formGroup]="searchByForm" (ngSubmit)="onSubmit(searchByForm.value)">
+          <button id="btn_district" type="button" class="btn btn-outline-dark mr-sm-2" data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selectDistrict()">
+            By District
+          </button>
+          <button id="btn_name" type="button" class="btn btn-outline-dark mr-sm-2" data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selectName()">
+            By Name
+          </button>
+          <!-- text input for keyword -->
+          <input formControlName="keyword"  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+          (input)="enteringKeyword()" (blur)="notEntering()">
+          <!-- submit button -->
+          <button  class="btn btn-primary mr-sm-2" type="submit" [disabled]="disableButton">Search</button>
+          <!-- tutorial -->
+          <div class="badge badge-success mr-sm-5" style="min-width:290px;font-size:20px;">{{tutorialMessage}}</div>
+        </form>
+      </li>
+      <li class="nav-item">
+        <form class="form-inline"> <!-- this form element help div align with above form-->
+          <button  class="btn btn-primary mr-sm-2"  [disabled]="disableEditBtn" (click)="openEditHandler()">Edit</button>
+          <div class="badge badge-success mr-sm-2" style="min-width:240px;font-size:20px;">You are curretly editing {{total_edit}} items</div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</nav>
