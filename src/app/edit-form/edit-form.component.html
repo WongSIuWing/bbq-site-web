@@ -1,0 +1,10 @@
+<form [formGroup]="editBBQForm" (ngSubmit)="onSubmit(editBBQForm.value)" class="form-group" class="border border-success">
+  <h4 class="ui header">You are editing {{name}}</h4>
+  <div class="form-group col-md-9">
+    <label for="name">Give it a new name</label>
+    <input type="text" class="form-control" id="name" placeholder="e.g. New BBQ site name" formControlName="name">
+  </div>
+  <button type="submit" class="btn btn-primary" *ngIf="editBBQForm.controls.name.valid">Upload</button>
+  <span *ngIf="editBBQForm.controls.name.invalid" class="ml-3">  It seems you have not yet decide the name !</span>
+  <span *ngIf="done_edit"><br>The last edit with new name {{new_name}} is updated </span>
+</form>

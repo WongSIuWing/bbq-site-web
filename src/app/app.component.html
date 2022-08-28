@@ -1,0 +1,23 @@
+<div class="full">
+<div class="bar">
+<app-search-bar 
+    (searchAllEvent)="searchAllEventReceiver()" 
+    (searchByEvent)="searchByEventReceiver($event)" 
+    (searchParameter)="searchParameterReceiver($event)"
+    (upload)="uploadReceiver()"
+    (openEdit)="openEditReceiver()"
+>
+</app-search-bar>
+</div>
+<div class="content">
+<app-search-by 
+    [searchByData]="this.searchByData" 
+    [searchParameter]="this.searchParameter" 
+    *ngIf="searchByTriggered" 
+    (edit)="editReceiver($event)">
+</app-search-by>
+<app-search-all *ngIf="searchAllTriggered" (edit)="editReceiver($event)"></app-search-all>
+<app-upload [hidden]="!uploadTriggered"></app-upload>
+<app-edit [hidden]="!editTriggered" [name]="this.editName" (send_edit_count)="editCountReceiver($event)"></app-edit>
+</div>
+</div>
