@@ -2,7 +2,7 @@
 
 ## Framework/technology used 
 
-client side - angular(typescript,html),bootstrap,jquery(for css effects)  
+client side - angular(typescript,html),bootstrap,jquery(for css effects),rxjs(asObservable)
 server side - php  
 database    - mysql  
 
