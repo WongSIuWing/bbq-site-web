@@ -18,7 +18,7 @@ download xampp , open and start apache , MySQL
 put assignment_web (server) folder inside /htdocs/  
 
 ### Database installation
-Open database UI controls with this URL http://localhost/phpmyadmin/index.php?route=/&lang=zh_TW  
+Open database UI controls with my sql UI , example URL - http://localhost/phpmyadmin/index.php?route=/&lang=zh_TW  
 Create a new database named : assignment_web  
 import and load the assignment_web.sql ,   
 
